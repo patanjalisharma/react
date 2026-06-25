@@ -1,121 +1,107 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import Card from "./components/Card"
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  const jobs = [
+  {
+    id: 1,
+    company: "Amazon",
+    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3FWYqI7Rj3rLofyaft2Fx6Vi9I8OjJRXNIw&s",
+    posted: "5d",
+    title: "Senior UI/UX Designer",
+    type: "Part-Time",
+    level: "Senior Level",
+    salary: "$120/hr",
+    location: "Mumbai, India",
+  },
+  {
+    id: 2,
+    company: "Google",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg",
+    posted: "2d",
+    title: "Graphic Designer",
+    type: "Full-Time",
+    level: "Mid Level",
+    salary: "$150k",
+    location: "Bengaluru, India",
+  },
+  {
+    id: 3,
+    company: "Microsoft",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
+    posted: "1d",
+    title: "Frontend Developer",
+    type: "Remote",
+    level: "Junior Level",
+    salary: "$90k",
+    location: "Hyderabad, India",
+  },
+  {
+    id: 4,
+    company: "Netflix",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg",
+    posted: "4d",
+    title: "React Developer",
+    type: "Full-Time",
+    level: "Senior Level",
+    salary: "$180k",
+    location: "Remote",
+  },
+  {
+    id: 5,
+    company: "Adobe",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Adobe_Systems_logo_and_wordmark.svg",
+    posted: "3d",
+    title: "Product Designer",
+    type: "Part-Time",
+    level: "Mid Level",
+    salary: "$110/hr",
+    location: "Noida, India",
+  },
+  {
+    id: 6,
+    company: "Spotify",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg",
+    posted: "6d",
+    title: "UI Designer",
+    type: "Remote",
+    level: "Senior Level",
+    salary: "$140k",
+    location: "Stockholm, Sweden",
+  },
+  {
+    id: 7,
+    company: "Meta",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/a/ab/Meta-Logo.png",
+    posted: "1w",
+    title: "Full Stack Developer",
+    type: "Full-Time",
+    level: "Senior Level",
+    salary: "$210k",
+    location: "Menlo Park, USA",
+  },
+  {
+    id: 8,
+    company: "Airbnb",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/6/69/Airbnb_Logo_B%C3%A9lo.svg",
+    posted: "2w",
+    title: "Backend Engineer",
+    type: "Hybrid",
+    level: "Mid Level",
+    salary: "$170k",
+    location: "San Francisco, USA",
+  },
+];
+
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
-
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+   <div className="parent">
+     {jobs.map(function(e){
+      return <div key={e.id}>
+         <Card company={e.company} title = {e.title} salary = {e.salary} location = {e.location} posted = {e.posted} logo = {e.logo} type = {e.type} level = {e.level} />
+      </div>
+     })}
+   </div>
   )
 }
 
